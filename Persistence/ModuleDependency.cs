@@ -18,6 +18,7 @@ namespace Persistence
 
             services.AddScoped<IRepository<Accommodation, long>, GenericRepository<Accommodation, long>>();
             services.AddScoped<IRepository<City, Guid>, GenericRepository<City, Guid>>();
+            services.AddScoped<IRepository<School, long>, GenericRepository<School, long>>();
         }
     }
 }
