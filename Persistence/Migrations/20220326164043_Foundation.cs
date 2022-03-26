@@ -9,19 +9,19 @@ namespace Persistence.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<DateOnly>(
+            migrationBuilder.AddColumn<DateTime>(
                 name: "Foundation",
                 table: "Schools",
-                type: "date",
+                type: "datetime(6)",
                 nullable: false,
-                defaultValue: new DateOnly(1, 1, 1));
+                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
-            migrationBuilder.AddColumn<DateOnly>(
+            migrationBuilder.AddColumn<DateTime>(
                 name: "Foundation",
                 table: "Cities",
-                type: "date",
+                type: "datetime(6)",
                 nullable: false,
-                defaultValue: new DateOnly(1, 1, 1));
+                defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

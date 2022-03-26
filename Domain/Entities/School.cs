@@ -8,6 +8,6 @@ namespace Domain.Entities
 
         public virtual City City { get; set; }
 
-        public DateOnly Foundation { get; private set; }
+        public DateTime Foundation { get; private set; }
     }
 }

@@ -21,7 +21,7 @@ namespace Domain.Entities
 
         public string Name { get; private set; }
 
-        public DateOnly Foundation { get; private set; }
+        public DateTime Foundation { get; private set; }
 
         public ICollection<CityAccommodation> CityAccommodations { get; private set; }
 

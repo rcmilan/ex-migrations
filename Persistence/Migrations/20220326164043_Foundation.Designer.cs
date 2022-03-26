@@ -11,7 +11,7 @@ using Persistence.Configurations;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(PersistenceDbContext))]
-    [Migration("20220326163731_Foundation")]
+    [Migration("20220326164043_Foundation")]
     partial class Foundation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,8 +45,8 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<DateOnly>("Foundation")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("Foundation")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -60,25 +60,25 @@ namespace Persistence.Migrations
                         new
                         {
                             Id = new Guid("0a6ad2fe-6318-454f-907e-a67b0893537a"),
-                            Foundation = new DateOnly(1, 1, 1),
+                            Foundation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Cidade N"
                         },
                         new
                         {
                             Id = new Guid("0a6bd2fe-6318-454f-907e-b67b0893537a"),
-                            Foundation = new DateOnly(1, 1, 1),
+                            Foundation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Cidade S"
                         },
                         new
                         {
                             Id = new Guid("0a6cd2fe-6318-454f-907e-c67b0893537a"),
-                            Foundation = new DateOnly(1, 1, 1),
+                            Foundation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Cidade L"
                         },
                         new
                         {
                             Id = new Guid("0a6dd2fe-6318-454f-907e-d67b0893537a"),
-                            Foundation = new DateOnly(1, 1, 1),
+                            Foundation = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Name = "Cidade O"
                         });
                 });
@@ -92,8 +92,8 @@ namespace Persistence.Migrations
                     b.Property<Guid>("CityId")
                         .HasColumnType("char(36)");
 
-                    b.Property<DateOnly>("Foundation")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("Foundation")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
                         .IsRequired()
