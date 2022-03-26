@@ -6,6 +6,6 @@ namespace Domain.Entities
     {
         public string Name { get; set; }
         public int Rooms { get; set; }
-        public Address Address { get; set; }
+        public IEnumerable<Address> Addresses { get; set; }
     }
 }
