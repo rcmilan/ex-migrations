@@ -12,6 +12,7 @@ namespace Persistence.Configurations
 
         public DbSet<Accommodation> Accommodations { get; set; }
         public DbSet<City> Cities { get; set; }
+        public DbSet<School> Schools { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

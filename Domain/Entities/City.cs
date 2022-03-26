@@ -28,6 +28,8 @@ namespace Domain.Entities
 
         public ICollection<CityAccommodation> CityAccommodations { get; set; }
 
-        public virtual IEnumerable<Accommodation> Accommodations { get => CityAccommodations.Select(ca => ca.Accommodation); }
+        public virtual ICollection<School> Schools { get; set; }
+
+        public IEnumerable<Accommodation> Accommodations { get => CityAccommodations.Select(ca => ca.Accommodation); }
     }
 }
