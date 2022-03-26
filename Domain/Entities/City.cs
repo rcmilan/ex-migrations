@@ -6,7 +6,7 @@ namespace Domain.Entities
     {
         public string Name { get; set; }
 
-        public IEnumerable<CityAccommodation> CityAccommodations { get; set; }
+        public virtual IEnumerable<CityAccommodation> CityAccommodations { get; set; }
 
         public IEnumerable<Accommodation> Accommodations { get => CityAccommodations.Select(ca => ca.Accommodation); }
     }

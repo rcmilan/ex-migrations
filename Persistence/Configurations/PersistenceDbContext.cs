@@ -11,6 +11,14 @@ namespace Persistence.Configurations
         }
 
         public DbSet<Accommodation> Accommodations { get; set; }
+        public DbSet<City> Cities { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+
+            optionsBuilder.UseLazyLoadingProxies();
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
