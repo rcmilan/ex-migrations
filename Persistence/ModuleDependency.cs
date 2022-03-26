@@ -16,7 +16,8 @@ namespace Persistence
 
             services.AddDbContext<PersistenceDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(mySqlConnection)));
 
-            services.AddScoped<IRepository<Accommodation, long>, Repository<Accommodation, long>>();
+            services.AddScoped<IRepository<Accommodation, long>, GenericRepository<Accommodation, long>>();
+            services.AddScoped<IRepository<City, Guid>, GenericRepository<City, Guid>>();
         }
     }
 }

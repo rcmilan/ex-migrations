@@ -4,11 +4,11 @@ using Persistence.Configurations;
 
 namespace Persistence.Repositories
 {
-    internal class Repository<TEntity, TId> : IRepository<TEntity, TId> where TEntity : BaseEntity<TId>
+    internal class GenericRepository<TEntity, TId> : IRepository<TEntity, TId> where TEntity : BaseEntity<TId>
     {
         private readonly PersistenceDbContext _context;
 
-        public Repository(PersistenceDbContext context)
+        public GenericRepository(PersistenceDbContext context)
         {
             _context = context;
         }
