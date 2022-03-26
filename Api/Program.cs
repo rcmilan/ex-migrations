@@ -3,7 +3,7 @@ using Persistence;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDatabaseModule();
+builder.Services.AddDatabaseModule("server=localhost;port=3306;userid=mysqlusr;password=password;database=accommodations;");
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
