@@ -4,11 +4,6 @@ namespace Domain.Entities
 {
     public class City : BaseEntity<Guid>
     {
-        protected City()
-        {
-
-        }
-
         public City(string name)
         {
             Name = name;
@@ -24,11 +19,13 @@ namespace Domain.Entities
             return this;
         }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public ICollection<CityAccommodation> CityAccommodations { get; set; }
+        public DateOnly Foundation { get; private set; }
 
-        public virtual ICollection<School> Schools { get; set; }
+        public ICollection<CityAccommodation> CityAccommodations { get; private set; }
+
+        public virtual ICollection<School> Schools { get; private set; }
 
         public IEnumerable<Accommodation> Accommodations { get => CityAccommodations.Select(ca => ca.Accommodation); }
     }
