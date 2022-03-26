@@ -12,6 +12,7 @@ namespace Persistence.Configurations.EntityType
 
             builder.Property(s => s.Id).ValueGeneratedOnAdd();
             builder.Property(s => s.Name);
+            builder.Property(s => s.Foundation);
         }
     }
 }

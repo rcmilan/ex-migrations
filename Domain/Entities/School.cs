@@ -7,5 +7,7 @@ namespace Domain.Entities
         public string Name { get; set; }
 
         public virtual City City { get; set; }
+
+        public DateOnly Foundation { get; private set; }
     }
 }

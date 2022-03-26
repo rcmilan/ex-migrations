@@ -12,6 +12,7 @@ namespace Persistence.Configurations.EntityType
 
             builder.Property(c => c.Id).ValueGeneratedOnAdd();
             builder.Property(c => c.Name);
+            builder.Property(c => c.Foundation);
 
             builder.HasMany(c => c.Schools)
                 .WithOne(s => s.City);
