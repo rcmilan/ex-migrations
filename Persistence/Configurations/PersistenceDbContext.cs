@@ -8,8 +8,6 @@ namespace Persistence.Configurations
     {
         public PersistenceDbContext(DbContextOptions options) : base(options)
         {
-            Database.EnsureCreated();
-            //Database.Migrate();
         }
 
         public DbSet<Accommodation> Accommodations { get; set; }
