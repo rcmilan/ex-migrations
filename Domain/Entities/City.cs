@@ -16,18 +16,17 @@ namespace Domain.Entities
 
         public City AddAccommodation(Accommodation accommodation)
         {
-            var cityAccommodations = new List<CityAccommodation>();
+            if (CityAccommodations == null)
+                CityAccommodations = new List<CityAccommodation>();
 
-            cityAccommodations.ToList().Add(new CityAccommodation(this, accommodation));
-
-            CityAccommodations.Concat(cityAccommodations);
+            CityAccommodations.Add(new CityAccommodation(this, accommodation));
 
             return this;
         }
 
         public string Name { get; set; }
 
-        public IEnumerable<CityAccommodation> CityAccommodations { get; set; } = Enumerable.Empty<CityAccommodation>();
+        public ICollection<CityAccommodation> CityAccommodations { get; set; }
 
         public virtual IEnumerable<Accommodation> Accommodations { get => CityAccommodations.Select(ca => ca.Accommodation); }
     }

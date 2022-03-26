@@ -9,5 +9,7 @@ namespace Domain.Interfaces
         IEnumerable<TEntity> GetAll();
 
         Task<TEntity> Get(TId id);
+
+        Task<TEntity> Update(TEntity entity);
     }
 }

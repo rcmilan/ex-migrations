@@ -30,5 +30,17 @@ namespace Api.Controllers
 
             return Ok(cities);
         }
+
+        [HttpPut("{id:Guid}")]
+        public async Task<IActionResult> AddAccommodation(Guid id, Accommodation accommodation)
+        {
+            var city = await _repository.Get(id);
+
+            city.AddAccommodation(accommodation);
+
+            await _repository.Update(city);
+
+            return Ok(city);
+        }
     }
 }
