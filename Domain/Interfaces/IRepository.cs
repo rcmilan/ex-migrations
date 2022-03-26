@@ -6,7 +6,7 @@ namespace Domain.Interfaces
     {
         Task<TEntity> Add(TEntity entity);
 
-        Task<IEnumerable<TEntity>> GetAll();
+        IEnumerable<TEntity> GetAll();
 
         Task<TEntity> Get(TId id);
     }

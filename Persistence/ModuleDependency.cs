@@ -1,7 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Domain.Entities;
+using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using MySqlConnector;
 using Persistence.Configurations;
+using Persistence.Repositories;
 
 namespace Persistence
 {
@@ -12,6 +15,8 @@ namespace Persistence
             var mySqlConnection = new MySqlConnection(connectionString);
 
             services.AddDbContext<PersistenceDbContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(mySqlConnection)));
+
+            services.AddScoped<IRepository<Accommodation, long>, Repository<Accommodation, long>>();
         }
     }
 }
