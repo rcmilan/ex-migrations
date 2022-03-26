@@ -1,6 +1,7 @@
 ﻿using Domain.Base;
 using Domain.Interfaces;
 using Persistence.Configurations;
+using System.Linq.Expressions;
 
 namespace Persistence.Repositories
 {
@@ -29,6 +30,13 @@ namespace Persistence.Repositories
                 .FindAsync(id);
 
             return entity;
+        }
+
+        public IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> predicate)
+        {
+            var entities = _context.Set<TEntity>().Where(predicate).ToList();
+
+            return entities;
         }
 
         public IEnumerable<TEntity> GetAll()

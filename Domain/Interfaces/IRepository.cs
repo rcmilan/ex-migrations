@@ -1,4 +1,5 @@
 ﻿using Domain.Base;
+using System.Linq.Expressions;
 
 namespace Domain.Interfaces
 {
@@ -6,9 +7,11 @@ namespace Domain.Interfaces
     {
         Task<TEntity> Add(TEntity entity);
 
-        IEnumerable<TEntity> GetAll();
-
         Task<TEntity> Get(TId id);
+
+        IEnumerable<TEntity> Get(Expression<Func<TEntity, bool>> predicate);
+
+        IEnumerable<TEntity> GetAll();
 
         Task<TEntity> Update(TEntity entity);
     }
