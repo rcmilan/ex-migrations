@@ -26,6 +26,13 @@ namespace Persistence.Configurations
 
             modelBuilder.ApplyConfiguration(new AccommodationEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new CityEntityTypeConfiguration());
+
+            modelBuilder.Entity<City>().HasData(
+                new City("Cidade N").AddAccommodation(new Accommodation("Acomodação A", 5)),
+                new City("Cidade S").AddAccommodation(new Accommodation("Acomodação B", 5)),
+                new City("Cidade L").AddAccommodation(new Accommodation("Acomodação C", 5)),
+                new City("Cidade O").AddAccommodation(new Accommodation("Acomodação D", 5))
+                );
         }
     }
 }
