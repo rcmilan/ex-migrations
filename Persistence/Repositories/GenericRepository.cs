@@ -18,7 +18,7 @@ namespace Persistence.Repositories
             await _context.Set<TEntity>()
                 .AddAsync(entity);
 
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return entity;
         }
@@ -37,6 +37,15 @@ namespace Persistence.Repositories
                 .ToList();
 
             return entities;
+        }
+
+        public async Task<TEntity> Update(TEntity entity)
+        {
+            _context.Set<TEntity>().Update(entity);
+
+            await _context.SaveChangesAsync();
+
+            return entity;
         }
     }
 }
