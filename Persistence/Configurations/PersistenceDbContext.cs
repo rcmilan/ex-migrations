@@ -25,6 +25,7 @@ namespace Persistence.Configurations
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfiguration(new AccommodationEntityTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new CityEntityTypeConfiguration());
         }
     }
 }
