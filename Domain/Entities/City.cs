@@ -16,8 +16,11 @@ namespace Domain.Entities
 
         public City AddAccommodation(Accommodation accommodation)
         {
-            CityAccommodations.ToList()
-                .Add(new CityAccommodation(this, accommodation));
+            var cityAccommodations = new List<CityAccommodation>();
+
+            cityAccommodations.ToList().Add(new CityAccommodation(this, accommodation));
+
+            CityAccommodations.Concat(cityAccommodations);
 
             return this;
         }

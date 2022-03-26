@@ -26,13 +26,21 @@ namespace Persistence.Configurations
 
             modelBuilder.ApplyConfiguration(new AccommodationEntityTypeConfiguration());
             modelBuilder.ApplyConfiguration(new CityEntityTypeConfiguration());
+            
+            SeedData(modelBuilder);
+        }
 
-            modelBuilder.Entity<City>().HasData(
-                new City("Cidade N").AddAccommodation(new Accommodation("Acomodação A", 5)),
-                new City("Cidade S").AddAccommodation(new Accommodation("Acomodação B", 5)),
-                new City("Cidade L").AddAccommodation(new Accommodation("Acomodação C", 5)),
-                new City("Cidade O").AddAccommodation(new Accommodation("Acomodação D", 5))
-                );
+        private static void SeedData(ModelBuilder modelBuilder)
+        {
+            List<City> cities = new()
+            {
+                new City("Cidade N") { Id = Guid.Parse("0a6ad2fe-6318-454f-907e-a67b0893537a") },
+                new City("Cidade S") { Id = Guid.Parse("0a6bd2fe-6318-454f-907e-b67b0893537a") },
+                new City("Cidade L") { Id = Guid.Parse("0a6cd2fe-6318-454f-907e-c67b0893537a") },
+                new City("Cidade O") { Id = Guid.Parse("0a6dd2fe-6318-454f-907e-d67b0893537a") }
+            };
+
+            modelBuilder.Entity<City>().HasData(cities);
         }
     }
 }
