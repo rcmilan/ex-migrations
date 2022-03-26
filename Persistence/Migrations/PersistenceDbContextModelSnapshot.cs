@@ -33,12 +33,12 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Accommodations");
+                    b.ToTable("Accommodations", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Entities.Accommodation", b =>
                 {
-                    b.OwnsMany("Domain.Entities.Address", "Addresses", b1 =>
+                    b.OwnsMany("Domain.Entities.Accommodation.Addresses#Domain.Entities.Address", "Addresses", b1 =>
                         {
                             b1.Property<int>("Id")
                                 .ValueGeneratedOnAdd()
@@ -71,7 +71,7 @@ namespace Persistence.Migrations
 
                             b1.HasIndex("AccommodationId");
 
-                            b1.ToTable("Address");
+                            b1.ToTable("Address", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("AccommodationId");

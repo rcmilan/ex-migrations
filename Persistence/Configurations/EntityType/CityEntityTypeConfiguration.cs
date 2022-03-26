@@ -13,6 +13,8 @@ namespace Persistence.Configurations.EntityType
             builder.Property(c => c.Id).ValueGeneratedOnAdd();
             builder.Property(c => c.Name);
 
+            builder.Ignore(c => c.Accommodations);
+
             builder.OwnsMany(c => c.CityAccommodations, c => {
                 c.HasKey(c => c.Id);
 

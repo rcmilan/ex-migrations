@@ -4,7 +4,7 @@ namespace Domain.Entities
 {
     public class CityAccommodation : BaseEntity<int>
     {
-        public City City { get; set; }
-        public Accommodation Accommodation { get; set; }
+        public virtual City City { get; set; }
+        public virtual Accommodation Accommodation { get; set; }
     }
 }
