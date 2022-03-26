@@ -6,6 +6,6 @@ namespace Domain.Entities
     {
         public string Name { get; set; }
 
-        public City City { get; set; }
+        public virtual City City { get; set; }
     }
 }
